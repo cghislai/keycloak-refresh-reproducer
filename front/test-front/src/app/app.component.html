@@ -1,0 +1,13 @@
+<header class="header">
+  <span>{{ title }}</span>
+
+  <span *ngIf="loggedIn; else notLogged">
+    Logged as {{ userName }}
+    <a (click)="onLogoutClick()">Logout</a>
+  </span>
+  <ng-template #notLogged>
+    <a (click)="onLoginClick()">Login</a>
+  </ng-template>
+</header>
+
+<router-outlet></router-outlet>
